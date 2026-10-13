@@ -1,0 +1,236 @@
+/*
+ * DMS+ theme tokens, taken from the Figma form file (DMS--23, node 5225:65614) with
+ * get_variable_defs. Figma variable names are in the comments.
+ *
+ * Still NOT from Figma (marked "provisional"): primary hover, disabled field fill, the Toggle's
+ * off colour, the scrollbar thumb, the logo, the Stepper and the InlineBanner warning/success colours. Change them here only.
+ */
+@theme {
+  --font-sans: 'Noto Sans Variable', 'Noto Sans', ui-sans-serif, system-ui, 'Segoe UI', sans-serif;
+
+  /* Neutral/Light (For White BG) */
+  --color-header: #0c1927; /* Neutral-1300 */
+  --color-page: #e3eaf3; /* Neutral-200 */
+  --color-card: #ffffff; /* Neutral-000 */
+  --color-ink: #192839; /* Netral-1200: input text */
+  --color-label: #2f4256; /* Netral-1000: labels, card title */
+  --color-muted: #768ea7; /* Neutral-600: placeholders, icons, disabled text (3.4:1, so not for reading text) */
+  /* Added for reading text on white (5.2:1) and on the light grey fills (4.8:1): helper text,
+     summaries, notes, labels in the review. Not in the Figma file. */
+  --color-subtle: #5a6f85;
+  --color-line: #6c849d2e; /* Neutral-a100: dividers */
+  /* Input border. The Figma value (Light\Neutral-a200, #6c849d52) is 1.45:1 on white; this solid grey is 3.2:1,
+     the 3:1 that WCAG 1.4.11 asks for the boundary of a field. One token: change it here to go back. */
+  --color-field-border: #8091a8;
+
+  /* DMS+/Primary */
+  --color-primary: #2950da; /* Primary-600 */
+  --color-primary-50: #f5f8ff;
+  --color-primary-200: #b4cdfd;
+  --color-primary-300: #75a3ff;
+  --color-primary-400: #4d7fff;
+  --color-primary-hover: #1f3fb8; /* provisional */
+
+  /* Form+/Primary: required asterisk and errors */
+  --color-error: #d44a4a;
+  /* Error as text: #d44a4a is 4.3:1 on white, this is 5.8:1 (4.8:1 on the tinted chips). Borders and fills keep the Figma red. */
+  --color-error-text: #b73434;
+
+  /* InlineBanner, Badge and result colours for warning and success: provisional, no Figma
+     reference. Dark enough to read as text (5.9:1 and 5.3:1 on white). */
+  --color-warning: #8a5a0b;
+  --color-success: #1a7040;
+
+  /* Toggle: on colour is Form+/Primary 2/Primary-600, knob is color.icon.inverse */
+  --color-toggle-on: #5d4ad4;
+  --color-toggle-off: #8091a8; /* off track of the toggle: 3.2:1, like the border of a field */
+
+  --color-field-disabled: #f4f6f8; /* provisional */
+
+  --radius-field: 8px; /* borderRadius_M */
+  --radius-card: 8px;
+
+  /* elevation/lowRaised: 0 2px 16px 0 #19283917 */
+  --shadow-card: 0 2px 16px 0 #19283917;
+
+  /* Text styles */
+  --text-heading-s: 20px; /* Heading/S: Noto Sans ExtraBold 20/28 */
+  --text-heading-s--line-height: 28px;
+  --text-heading-s--font-weight: 800;
+  --text-body-m: 14px; /* Body/Medium_M: Medium 14/20 */
+  --text-body-m--line-height: 20px;
+  --text-body-m--font-weight: 500;
+  --text-link-s: 13px; /* Body/Link_S: SemiBold 13/18 (field labels) */
+  --text-link-s--line-height: 18px;
+  --text-link-s--font-weight: 600;
+  --text-button-s: 14px; /* Button/S: SemiBold 14/16 */
+  --text-button-s--line-height: 16px;
+  --text-button-s--font-weight: 600;
+
+  /*
+   * App shell (Figma DMS--23, node 5904:14434, "Metadata > Master" frame). Colours below were
+   * measured on the frame, not read from Figma variables (the Figma tool was not reachable), so
+   * they are within a shade of the design. The collapsed sidebar and the dropdowns have no Figma
+   * reference.
+   */
+  --color-sidebar: #041830; /* sidebar background */
+  --color-sidebar-ink: #a9bed6; /* nav labels and icons (9.3:1 on the sidebar) */
+  --color-sidebar-ink-dim: #7389a5; /* labels of sections that are not in the demo (5:1 on the sidebar) */
+  --color-sidebar-line: #0e223a; /* hairline above the Bin row */
+  --color-sidebar-active-from: #21345f; /* active item: gradient, left end */
+  --color-sidebar-active-to: #0f1c2d; /* active item: gradient, right end */
+  --color-sidebar-indicator: #3065ff; /* 4px bar at the left of the active item */
+  --color-sidebar-brand: #90a4bd; /* "dMACQ" above DMS+ */
+  --color-sidebar-grid: #bccee4; /* app-grid icon */
+  --color-avatar: #d6e6a2; /* round avatar with initials */
+
+  /*
+   * Master list (Figma frame 5904:14434, measured from the frame like the shell colours). The
+   * status chips are paler than the form's banners; their text is darkened a little to reach 4.5:1.
+   */
+  --color-table-head: #f1f4f9; /* header row of the tables */
+  --color-tab-active: #1f3a8a; /* text of the selected tab (the 2px bar under it is primary) */
+  --color-primary-border: #9db3f2; /* outline of the Import button */
+  --color-status-progress-bg: #fffbea;
+  --color-status-progress-border: #ece3b8;
+  --color-status-progress-text: #8a6d00;
+  --color-status-action-bg: #fff4f1;
+  --color-status-action-border: #f3d9d1;
+  --color-status-action-text: #b34a14;
+  --color-status-approved-bg: #f3fcf5;
+  --color-status-approved-border: #cfe8d6;
+  --color-status-approved-text: #167a31;
+  --color-status-rejected-bg: #fff4f4;
+  --color-status-rejected-border: #f3d0d0;
+  --color-status-rejected-text: #b93636;
+  --color-status-draft-bg: #f1f4f9; /* the grey Draft chip: not in Figma */
+  --color-status-draft-border: #d6dde6;
+  --color-status-draft-text: #4f6379;
+
+  /*
+   * Review screen (Figma Workflow file kruqrhBevfG4anwkROpeOt, node 2613:30827), measured on the
+   * frame at 200%: the header bar is Neutral-1300 (--color-header); these are the rest.
+   */
+  --color-header-muted: #8b9daf; /* "Workflow >" in the top bar */
+  --color-header-line: #222b34; /* 1px under the top bar */
+  --color-primary-100: #d5e3ff; /* halo round the current step of the Progress panel */
+  --color-separator: #b8c3ce; /* the small dots between the parts of a meta line */
+
+  /* Take Action panel (Figma node 2535-45001, frame 29617172): the footer fill and the disabled Submit */
+  --color-panel-footer: #f9fafc;
+  --color-primary-disabled: #d4deff;
+  --color-primary-disabled-ink: #a0add7;
+
+  /* File icons, drawn after the icon sheet of the Workflow design (measured from its PDF icon) */
+  --color-file-page: #e3eaf4;
+  --color-file-fold: #98a2ae;
+  --color-file-pdf: #f4523f;
+  --color-file-doc: #2b6fd6;
+  --color-file-image: #38a3e8;
+  --color-file-hill: #2db887;
+  --color-file-hill-dark: #1f9d73;
+
+  /*
+   * Files & Folders (Figma file DMS--24, node 299:6140), measured on the frame: the orange folder of
+   * a folder card, the grey-blue pill of a file's version, and the selected side of the list/grid toggle.
+   */
+  --color-folder: #f6b149;
+  --color-folder-back: #e9a43c;
+  --color-chip-version-bg: #f0f3fa;
+  --color-chip-version-text: #445174;
+  --color-view-toggle-on: #eeeeff;
+  --color-view-toggle-ink: #2342ac;
+
+  /* The record sheet slides up from the bottom of the screen */
+  --animate-sheet-up: sheet-up 250ms ease-out;
+  @keyframes sheet-up {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Layout from the design */
+  --spacing-sidebar: 240px;
+  --spacing-sidebar-collapsed: 72px; /* provisional: no collapsed frame in Figma */
+  --spacing-header: 56px;
+  --spacing-title-bar: 60px;
+  --spacing-footer: 88px;
+  /* The Figma form is 654px; the card is wider on request so fields can sit three in a row */
+  --spacing-card: 960px;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-page);
+  }
+}
+
+/* The slider of the file cards: a 2px track and a small blue knob, as in the Files & Folders design */
+.range-thin {
+  appearance: none;
+  background: transparent;
+}
+.range-thin::-webkit-slider-runnable-track {
+  height: 2px;
+  border-radius: 9999px;
+  background: #c3cdd8;
+}
+.range-thin::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  margin-top: -4px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--color-primary);
+}
+.range-thin::-moz-range-track {
+  height: 2px;
+  border-radius: 9999px;
+  background: #c3cdd8;
+}
+.range-thin::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 9999px;
+  background: var(--color-primary);
+}
+
+@media (forced-colors: active) {
+  .range-thin::-webkit-slider-runnable-track {
+    background: CanvasText;
+  }
+  .range-thin::-webkit-slider-thumb {
+    background: Highlight;
+  }
+  .range-thin::-moz-range-track {
+    background: CanvasText;
+  }
+  .range-thin::-moz-range-thumb {
+    background: Highlight;
+  }
+}
+
+/* Thin custom scrollbar (6px) for the scrolling card body. Thumb colour is provisional. */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #b9c3cd;
+  border-radius: 9999px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .thin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #b9c3cd transparent;
+  }
+}
